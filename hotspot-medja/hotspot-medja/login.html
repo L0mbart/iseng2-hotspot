@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- aing lieuuurrr !!!!!!!!!!!!!!! -efer-//-->
+<html>
+<head>
+	<title>Medja Login</title> <!-- judulnye//-->
+	<link rel="stylesheet" href="normalize.css">	
+	<link rel="stylesheet" href="style.css"><!-- buat gaya2an login page ambilnya dari style.css//-->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+</head>
+<body>
+<!-- script login standarnye mikrotikkkk//-->
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="www.jlm.net.id" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+$(if trial == 'yes') $(if trial == 'yes') <center> <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"><img src="img/photo.png" /></a>.$(endif)</center>
+
+<script type="text/javascript">
+if (/mobile/i.test(navigator.userAgent)) //ngedetek dari perangkat mobile
+if (('ontouchstart' in window) ||    //detek perangkat nyang konek dari device yang touchscreen macem smarpret, samsul, ipon, mito, hp indroid 200rebuan, dll 
+   (window.DocumentTouch && document instanceof DocumentTouch) ||
+   ((hash['touch'] && hash['touch'].offsetTop) === 9))
+   
+{		<!-- kalo ada yg akses dari device touchscreen, larinya ke halaman ini//-->
+document.location="mobilelogin.html";
+}
+else {	<!-- ato selain touchscreen tapi mobile (kaya BB jadul, BB kuno, BB sejuta UMAT wkwkwk) larinya kemarihh //-->
+document.location="otherlogin.html";
+}
+</script>
+<!--
+  document.login.username.focus();
+//-->
+</body>
+</html>
+<!--selesaaaiiiiiiiiiiiiiiiiiii//-->

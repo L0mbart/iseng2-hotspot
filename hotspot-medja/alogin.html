@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MikroTik Template > Redirect</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<meta http-equiv="refresh" content="2; url=$(link-redirect)">
+	<script language="JavaScript">
+<!--
+    function startClock() {
+        $(if popup == 'true')
+        open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+	$(endif)
+	location.href = '$(link-redirect)';
+    }
+//-->
+</script>
+
+</head>
+<body onLoad="startClock()">
+
+	<section class="loginform cf">
+		<form name="login" action="$(link-login-only)" method="post" accept-charset="utf-8" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+			<ul>
+				<li>
+					<label for="usermail">You Are Logged In. If nothing happens, click <a href="$(link-redirect)">here</a></label>
+<p>By <a href="http://mikrotiktemplate.blogspot.com" target="_blank">MikroTik Template</a><br />$(if error)$(error)$(endif)</p>
+			</ul>
+		</form>
+	</section>
+</body>
+</html>
